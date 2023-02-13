@@ -1,5 +1,5 @@
 # rss_timeagg
-Script for aggregating rss posts from a feed across time, and outputting a feed of aggregated posts. Perfect for feeds that are too active and give you 10 posts a day where you'd rather get 1 long one. (I made it when I realized there was no convenient way to subscribe to Telegram channels that break up a single long post into multiple instead of using telegra.ph like they probably should.)
+Script for aggregating posts from an RSS feed across time into a HTML page, and outputting a feed of such aggregate pages. Perfect for feeds that are too active and give you 10 posts a day where you'd rather get 1 long one. (I made it when I realized there was no convenient way to subscribe to Telegram channels that break up a single long post into multiple instead of using telegra.ph like they probably should.)
 
 The outputted feed and its aggregates are outputted to an S3 bucket (or any other object storage system that is S3-compatible.) **It relies on there being `s3cmd` configured on your system.**
 
