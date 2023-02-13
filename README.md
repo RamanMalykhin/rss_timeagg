@@ -6,6 +6,7 @@ The outputted feed and its aggregates are outputted to an S3 bucket (or any othe
 Current limitations:
 * can only aggregate per day, but I plan to extend that to at least weeks, hours and minutes
 * does not explicitly respect the order of posts within the day.
+
 both will be fixed... when they will be fixed, but I expect that to happen sooner rather than later.
 
 ## Usage
