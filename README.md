@@ -21,7 +21,7 @@ For every feed that you want `rss_timeagg` to work on, it expects a json config 
 }
 ```
 where:
-* `job_name` is the name of this aggregation job. This appears in the title of the outputted feed as well, so best to not use special characters.
+* `job_name` is the name of this aggregation job. This appears in the title of the outputted feed as well as the name of the .xml, so best to not use special characters
 * `input_feed_link` is the feed you want to be aggregating
 * `s3cmd_bucket_url` is the url of your bucket that s3cmd uses (`s3://` and the name of your bucket)
 * `public_bucket_url` is the endpoint where you are serving your feed and files to the rest of the internet from your bucket
