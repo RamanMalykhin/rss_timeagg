@@ -26,7 +26,7 @@ where:
 * `s3cmd_bucket_url` is the url of your bucket that s3cmd uses (`s3://` and the name of your bucket)
 * `public_bucket_url` is the endpoint where you are serving your feed and files to the rest of the internet from your bucket
 
-after this has been created, simply run `rss_timeagg.py` from the console (or automation tool of your choice like crontab), passing with the argument `--config` the name of the config.
+after this has been created, simply run `rss_timeagg.py` from the console (or - more practical since you probably want your aggregate feed to keep updating - automation tool of your choice like crontab), passing with the argument `--config` the name of the config.
 ```
 python rss_timeagg.py --config nasa_breaking_config.json
 ```
