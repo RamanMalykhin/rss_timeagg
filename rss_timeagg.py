@@ -29,12 +29,15 @@ try:
 	
 	
 	input_feed = feedparser.parse(config['input_feed_link'])
-	feed_author = input_feed['feed']['author']
-	
+	#feed_author = input_feed['feed']['author']
+	feed_author = 'placeholder@example.py'
+	feed_entries = input_feed['entries']
+	feed_entries.reverse()
+
 	dateagg_dict = {}
 	output_feed_entries = []
 	
-	for entry in input_feed['entries']:
+	for entry in feed_entries:
 		publish_date = entry['published_parsed']
 		agg_date = str(datetime.date(publish_date.tm_year, publish_date.tm_mon, publish_date.tm_mday))
 		
@@ -79,7 +82,7 @@ try:
 		title = config['job_name'] + "_rss_timeagg",
 		link = link,
 		description = "",
-		language = "",
+		language = "en",
 		lastBuildDate = datetime.datetime.now(),
 		items = rfeed_items)
 	
