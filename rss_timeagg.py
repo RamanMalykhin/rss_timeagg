@@ -25,15 +25,16 @@ try:
 
 	logging.info('beginning run')
 	
+	
+	
+	
 	input_feed = feedparser.parse(config['input_feed_link'])
-	
 	feed_author = input_feed['feed']['author']
-	feed_entries = input_feed['entries']
-	feed_entries.reverse()	
-
-	dateagg_dict = {}
 	
-	for entry in feed_entries:
+	dateagg_dict = {}
+	output_feed_entries = []
+	
+	for entry in input_feed['entries']:
 		publish_date = entry['published_parsed']
 		agg_date = str(datetime.date(publish_date.tm_year, publish_date.tm_mon, publish_date.tm_mday))
 		
@@ -59,7 +60,7 @@ try:
 		
 		subprocess.Popen(["s3cmd", "put", "--acl-public", filename, config['s3cmd_bucket_url']])
 		
-		link = config['public_bucket-url'] + filename
+		link = config['public_bucket_url'] + filename
 		
 		rfeed_items.append(rfeed.Item(
 			title = agg_date,
@@ -84,7 +85,7 @@ try:
 	with open(filename, 'w') as file:
 		file.write(f.rss())
 	
-	subprocess.Popen(["s3cmd", "put", "--acl-public", filename, config['bucket_url']])
+	subprocess.Popen(["s3cmd", "put", "--acl-public", filename, config['s3cmd_bucket_url']])
 	
 	outputted_files.append(filename)
 	
