@@ -84,7 +84,7 @@ try:
 	with open(filename, 'w') as file:
 		file.write(f.rss())
 	
-	subprocess.Popen(["s3cmd", "put", "--acl-public", filename, config['s3cmd_bucket_url']])
+	subprocess.Popen(["s3cmd", "put", "--acl-public", filename, config['bucket_url']])
 	
 	outputted_files.append(filename)
 	
