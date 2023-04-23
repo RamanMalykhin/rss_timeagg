@@ -5,7 +5,7 @@ The resulting feed and its aggregate HTMLs are outputted to an S3 bucket (or any
 
 Current limitations:
 * can only aggregate per day, but I plan to extend that to at least weeks, hours and minutes
-* does not explicitly respect the order of posts within the day.
+* ~~does not explicitly respect the order of posts within the day.~~ fixed as of [`ebeb39e5a741d6265f5229d54cd49931246ec431`](https://github.com/RamanMalykhin/rss_timeagg/commit/ebeb39e5a741d6265f5229d54cd49931246ec431)
 
 both will be fixed... when they will be fixed, but I expect that to happen sooner rather than later.
 
