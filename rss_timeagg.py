@@ -72,15 +72,18 @@ try:
 		
 		outputted_files.append(filename)
 		
+	filename = config['job_name']+'_feed.xml'
+	link = config['public_bucket_url'] + filename
+
 	f = rfeed.Feed(
 		title = config['job_name'] + "_rss_timeagg",
-		link = config['input_feed_link'],
+		link = link,
 		description = "",
 		language = "",
 		lastBuildDate = datetime.datetime.now(),
 		items = rfeed_items)
 	
-	filename = config['job_name']+'_feed.xml' 
+	 
 	
 	with open(filename, 'w') as file:
 		file.write(f.rss())
